@@ -1,13 +1,17 @@
-#include <stdint.h>
+#include <windows.h>
 
-void xor_encrypt(uint8_t *data, uint8_t key) {
-    for (int i = 0; i < 32; i++) {
+void xor_encrypt(char *data, char key) {
+    for (int i = 0; data[i] != '\0'; i++) {
         data[i] ^= key;
     }
 }
 
 int main() {
-    uint8_t buf[32] = "this is secret data........";
-    xor_encrypt(buf, 0xAA);
+    char msg[] = "HELLO";
+    xor_encrypt(msg, 0xAA);
     return 0;
+}
+
+int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
+    return main();
 }

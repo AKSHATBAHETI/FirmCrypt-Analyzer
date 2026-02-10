@@ -1,16 +1,9 @@
-# Compiled binaries
+# binaries
 *.bin
-*.exe
 
-# Ghidra artifacts (future)
-*.gpr
-*.rep
-ghidra_projects/
-
-# Python cache (future)
+# python
 __pycache__/
 *.pyc
 
-# OS noise
-Thumbs.db
-.DS_Store
+# model files
+*.joblib

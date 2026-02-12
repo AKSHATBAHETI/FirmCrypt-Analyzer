@@ -28,8 +28,8 @@ int WINAPI WinMain(HINSTANCE a, HINSTANCE b, LPSTR c, int d) {{
 }}
 '''
 
-factors = [1, 2, 3, 4, 5]
-sizes = [100, 200, 300, 400, 500]
+factors = [1,2,3,4]
+sizes = [100,200,300,400]
 
 count = 0
 for factor in factors:
@@ -40,8 +40,8 @@ for factor in factors:
 
         code = C_TEMPLATE.format(factor=factor, size=size)
 
-        with open(c_path, "w") as file:
-            file.write(code)
+        with open(c_path, "w") as f:
+            f.write(code)
 
         subprocess.run(["gcc", c_path, "-o", bin_path], check=True)
         count += 1
